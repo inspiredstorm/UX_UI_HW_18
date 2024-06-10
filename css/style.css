@@ -1,19 +1,24 @@
 @font-face {
     font-family: calderDark;
     src: url(../fonts/font.woff) 
-}
+    }
 @font-face {
     font-family: caliCoast;
     src: url(../fonts/californiacoast-regular-webfont.woff);
-}
+    }
 
 :root {
     --minBlockWidth: 340px;
-}
+    --cardRadius: 8px;
+    }
 
-p {
+p, li {
     font-family: "Trebuchet MS", Tahoma, sans-serif;
-}
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
 
   h1, h2 {
     font-family: caliCoast;
@@ -32,6 +37,10 @@ p {
     font-family: calderDark;
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 
   h5 {
@@ -144,6 +153,10 @@ footer {
     background-size: cover;
 }
 
+.title {
+    text-align: center;
+}
+
 .textBlock {
     width: var(--minBlockWidth);
     margin: 36px 36px 36px 36px;
@@ -163,6 +176,111 @@ footer {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-areas: 
+        'leftPad title title rightPad'
+        'leftPad card1 card2 rightPad'
+        'leftPad card3 card4 rightPad';
+
+    gap: 16px;
+    padding: 24px;
+}
+
+.projects img  {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.projects p {
+    margin-top: 0px;
+}
+
+.projects h5 {
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.projectsTitle {
+    grid-area: title;
+}
+
+.project1 {
+    grid-area: card1;
+}
+
+.project2 {
+    grid-area: card2;
+}
+
+.project3 {
+    grid-area: card3;
+}
+
+.project4 {
+    grid-area: card4;
+}
+
+.project1, .project2, .project3, .project4 {
+    color: black;
+}
+
+.leftSpace {
+    grid-area: leftPad;
+    width: 10%;
+}
+
+.rightSpace {
+    grid-area: rightPad;
+    width: 10%
+}
+
+.skills {
+    background-image: url(../images/colorful-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 4px;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills .title {
+    color: white;
+}
+
+.cardBox {
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-around;
+}
+
+.skillsCard {
+    display: flex;
+    flex-direction: column;
+    flex-basis: flex-start;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 12px;
+    padding: 16px;
+    width: 28%;
+    border-radius: var(--cardRadius);
+}
+
+.skillsCard h5 {
+    text-align: center;
+}
+
+.tools h5 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 16px #000000;
+}
 
 footer .navItems {
     width: 80%;
